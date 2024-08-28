@@ -1,0 +1,777 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow: auto;
+    background: url(../imgs-P1/back10.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    background-color: black;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: aqua;
+    border-radius: 100px;
+}
+@font-face {
+    font-family: 'head';
+    src: url(../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'nav-a';
+    src: url(../fonts/Roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: 'text';
+    src: url(../fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'title';
+    src: url(../fonts/Nosifer/Nosifer-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'services';
+    src: url(../fonts/Supermercado_One/SupermercadoOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'third';
+    src: url(../fonts/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: thirdd;
+    src: url(../fonts/Montserrat_Alternates/MontserratAlternates-ThinItalic.ttf);
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    box-shadow: 0 0 7px aqua;
+    transition: .5s;
+}
+header:hover {
+    box-shadow: 0 0 20px aqua;
+}
+
+header .head-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+header .head-box img {
+    width: 70px;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: 0 0 5px aqua;
+    transition: .9s;
+}
+
+header .head-box h1 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: head;
+    letter-spacing: 1px;
+    transition: .9s;
+    cursor: pointer;
+}
+
+header .head-box h1 sup {
+    font-size: 0.7rem;
+}
+
+header .head-box img:hover {
+    box-shadow: 0 0 15px aqua;
+    cursor: pointer;
+}
+
+header .head-box img:hover+h1,
+header .head-box h1:hover {
+    font-weight: 600;
+    text-shadow: 15px 15px 2px aqua;
+}
+
+header h2 {
+    color: white;
+    font-size: 3rem;
+    font-family: 'nav-a';
+    text-shadow: 0 0 5px aqua;
+    cursor: pointer;
+    transition: .6s;
+    letter-spacing: 6px;
+}
+
+header h2:hover {
+    text-shadow: 15px 15px 2px aqua;
+}
+
+header h3 {
+    color: white;
+    font-size: 1.6rem;
+    font-family: 'head';
+    cursor: pointer;
+    transition: .6s;
+}
+
+header h3:hover {
+    text-shadow: 15px 15px 2px aqua;
+}
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 1.3rem;
+    transition: all 0.5s;
+    position: relative;
+    font-family: 'nav-a';
+}
+
+header nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    width: 9px;
+    height: 9px;
+    border: 1px solid aqua;
+    border-width: 0 0 1px 1px;
+    opacity: 0;
+    transition: all 0.6s;
+    border-radius: 3px;
+}
+
+header nav a:hover::before {
+    opacity: 1;
+    bottom: -8px;
+    left: -12px;
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 9px;
+    height: 9px;
+    border: 1px solid aqua;
+    border-width: 1px 1px 0 0;
+    opacity: 0;
+    transition: all 0.6s;
+    border-radius: 3px;
+}
+
+header nav a:hover::after {
+    opacity: 1;
+    top: -8px;
+    right: -12px;
+}
+
+header nav a:hover {
+    color: aqua;
+}
+
+/* ############################# section part ###########################" */
+
+/* Row 1 */
+section {
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+    padding: 0 25px;
+}
+section :where(.row1 , .row2 , .row3 , .row4 , .row5) {
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 80px;
+}
+section .row1 :where(.b1 , .b2 , .b3),
+section .row2 :where(.b4 , .b5 , .b6),
+section .row3 :where(.b7, .b8, .b9),
+section .row4 :where(.b10, .b11, .b12),
+section .row5 :where(.b13, .b14, .b15) {
+    width: 300px;
+    height: auto;
+    /* background-color: rgba(255, 0, 0, 0.592); */
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+section .row1 .b1 .img1 {
+    background: url(../imgs-P1/list1.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+section .row1 .b2 .img2 {
+    background: url(../imgs-P1/list2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section .row1 .b3 .img3 {
+    background: url(../imgs-P1/car.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section .row2 .b4 .img4 {
+    background: url(../imgs-P1/list4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section .row2 .b5 .img5 {
+    background: url(../imgs-P1/list5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .row2 .b6 .img6 {
+    background: url(../imgs-P1/list6.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section .row3 .b7 .img7 {
+    background: url(../imgs-P1/list7.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section .row3 .b8 .img8 {
+    background: url(../imgs-P1/list8.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .row3 .b9 .img9 {
+    background: url(../imgs-P1/list9.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section .row4 .b10 .img10 {
+    background: url(../imgs-P1/list10.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section .row4 .b11 .img11 {
+    background: url(../imgs-P1/list11.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .row4 .b12 .img12 {
+    background: url(../imgs-P1/list12.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section .row5 .b13 .img13 {
+    background: url(../imgs-P1/list13.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section .row5 .b14 .img14 {
+    background: url(../imgs-P1/list14.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .row5 .b15 .img15 {
+    background: url(../imgs-P1/list15.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section .row1 :where(.b1 .img1, .b2 .img2, .b3 .img3),
+section .row2 :where(.b4 .img4, .b5 .img5, .b6 .img6),
+section .row3 :where(.b7 .img7, .b8 .img8, .b9 .img9),
+section .row4 :where(.b10 .img10, .b11 .img11, .b12 .img12),
+section .row5 :where(.b13 .img13, .b14 .img14, .b15 .img15) {
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    position: relative;
+    transition: .6s;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section .row1 :where(.b1 .img1, .b2 .img2, .b3 .img3):hover,
+section .row2 :where(.b4 .img4, .b5 .img5, .b6 .img6):hover,
+section .row3 :where(.b7 .img7, .b8 .img8, .b9 .img9):hover,
+section .row4 :where(.b10 .img10, .b11 .img11, .b12 .img12):hover,
+section .row5 :where(.b13 .img13, .b14 .img14, .b15 .img15):hover {
+    margin-top: -20px;
+    box-shadow: 0 0 20px aqua;
+}
+section .row1 :where(.b1 , .b2 , .b3) h4,
+section .row2 :where(.b4, .b5, .b6) h4,
+section .row3 :where(.b7, .b8, .b9) h4,
+section .row4 :where(.b10, .b11, .b12) h4,
+section .row5 :where(.b13, .b14, .b15) h4 {
+    color: wheat;
+    font-size: 1.5rem;
+    font-family: text;
+    margin: 10px 0 20px;
+}
+section .row1 :where(.b1 , .b2 , .b3) .lien,
+section .row2 :where(.b4, .b5, .b6) .lien,
+section .row3 :where(.b7, .b8, .b9) .lien,
+section .row4 :where(.b10, .b11, .b12) .lien,
+section .row5 :where(.b13, .b14, .b15) .lien {
+    color: white;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    font-size: 1.5rem;
+    font-family: third;
+    transition: .6s;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid aqua;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.589);
+    /* border: none; */
+}
+section .row1 :where(.b1, .b2, .b3) .lien::before,
+section .row2 :where(.b4, .b5, .b6) .lien::before,
+section .row3 :where(.b7, .b8, .b9) .lien::before,
+section .row4 :where(.b10, .b11, .b12) .lien::before,
+section .row5 :where(.b13, .b14, .b15) .lien::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: -10px;
+    left: -10px;
+    border-top: 4px solid aqua;
+    border-left: 4px solid aqua;
+    transition: .8s;
+    border-radius: 5px;
+}
+section .row1 :where(.b1, .b2, .b3) .lien::after,
+section .row2 :where(.b4, .b5, .b6) .lien::after ,
+section .row3 :where(.b7, .b8, .b9) .lien::after,
+section .row4 :where(.b10, .b11, .b12) .lien::after,
+section .row5 :where(.b13, .b14, .b15) .lien::after{
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    bottom: -10px;
+    right: -10px;
+    border-bottom: 4px solid aqua;
+    border-right: 4px solid aqua;
+    transition: .8s;
+    border-radius: 5px;
+}
+section .row1 :where(.b1, .b2, .b3) .lien:hover,
+section .row2 :where(.b4, .b5, .b6) .lien:hover,
+section .row3 :where(.b7, .b8, .b9) .lien:hover,
+section .row4 :where(.b10, .b11, .b12) .lien:hover,
+section .row5 :where(.b13, .b14, .b15) .lien:hover {
+    background-color: black;
+    color: wheat;
+    text-shadow: 3px 3px 2px aqua;
+    border: 1px solid aqua;
+    border-radius: 5px;
+    box-shadow: 0 0 5px aqua;
+}
+section .row1 :where(.b1, .b2, .b3) .lien:hover::before,
+section .row2 :where(.b4, .b5, .b6) .lien:hover::before,
+section .row3 :where(.b7, .b8, .b9) .lien:hover::before,
+section .row4 :where(.b10, .b11, .b12) .lien:hover::before,
+section .row5 :where(.b13, .b14, .b15) .lien:hover::before {
+    width: 100%;
+    height: 100%;
+    border-top: 4px solid aqua;
+    border-left: 4px solid aqua;
+}
+section .row1 :where(.b1, .b2, .b3) .lien:hover::after,
+section .row2 :where(.b4, .b5, .b6) .lien:hover::after,
+section .row3 :where(.b7, .b8, .b9) .lien:hover::after,
+section .row4 :where(.b10, .b11, .b12) .lien:hover::after,
+section .row5 :where(.b13, .b14, .b15) .lien:hover::after {
+    width: 100%;
+    height: 100%;
+    border-bottom: 4px solid aqua;
+    border-right: 4px solid aqua;
+}
+
+
+
+/* ###################### Footer #########################" */
+
+footer {
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.774);
+    border-top: 5px double aqua;
+    transition: .5s;
+}
+
+footer:hover {
+    box-shadow: 0 0 15px aqua;
+}
+
+footer .group-cols {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 80px 50px 60px;
+}
+
+footer .group-cols .col1 img {
+    width: 140px;
+    position: relative;
+    top: -45px;
+}
+
+footer .group-cols .col1 p {
+    color: wheat;
+    position: relative;
+    bottom: 40px;
+    font-family: text;
+    font-size: 0.9rem;
+    line-height: 160%;
+    cursor: default;
+}
+
+footer .group-cols :where(.col1, .col2, .col3, .col4, .col5) h1 {
+    color: rgba(0, 255, 255, 0.697);
+    font-size: 1.3rem;
+    font-family: title;
+    margin-bottom: 20px;
+    cursor: default;
+}
+
+footer .group-cols :where(.col1, .col2, .col3, .col4) ul li {
+    list-style: none;
+    color: wheat;
+    font-family: text;
+    line-height: 260%;
+    cursor: default;
+}
+
+footer .group-cols .col5 .inp {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 280px;
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0.345);
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+footer .group-cols .col5 .inp input {
+    width: 200px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    font-family: text;
+    outline: none;
+    color: wheat;
+    padding: 5px 7px 5px 5px;
+    font-size: 0.8rem;
+}
+
+footer .group-cols .col5 .inp button {
+    background-color: aqua;
+    width: 100px;
+    height: 100%;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: black;
+}
+
+footer .group-cols .col5 .inp input::placeholder {
+    color: grey;
+    font-weight: 600;
+}
+
+footer .group-cols .col5 .inp:hover {
+    box-shadow: 0 0 5px aqua;
+}
+
+footer .group-cols .col5 .inp button:active {
+    background-color: rgb(187, 234, 234);
+}
+
+footer .group-cols .col5 .inp img {
+    background-color: green;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -35px;
+    border-radius: 50%;
+    color: red;
+    padding: 2px;
+    display: none;
+}
+
+footer .footer-box {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer-box p {
+    color: white;
+    font-size: 1.0rem;
+    padding-left: 50px;
+    font-family: third;
+}
+
+footer .footer-box nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 50px;
+    gap: 25px;
+}
+
+footer .footer-box nav a {
+    color: wheat;
+    background-color: rgba(128, 128, 128, 0.267);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+footer .footer-box nav a:hover {
+    color: aqua;
+    background-color: rgba(128, 128, 128, 0.624);
+    border-radius: 20%;
+    box-shadow: 0 0 5px aqua;
+}
+
+
+/* ####################### Container #########################" */
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.929);
+    visibility: hidden;
+}
+.container .card {
+    width: 80%;
+    height: 550px;
+    overflow-y: auto;
+    background-color: rgb(41, 41, 41);
+    box-shadow: 0 0 15px aqua;
+}
+.container .card .head {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.978);
+    box-shadow: 0 0 7px aqua;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card .head:hover {
+    box-shadow: 0 0 15px aqua;
+}
+.container .card .head h3 {
+    color: white;
+    font-size: 3rem;
+    font-family: 'nav-a';
+    text-shadow: 0 0 5px aqua;
+    cursor: pointer;
+    transition: .6s;
+    letter-spacing: 6px;
+}
+.container .card .head h3:hover {
+    text-shadow: 15px 15px 2px aqua;
+}
+.container .card .head i {
+    color: white;
+    position: absolute;
+    left: 94%;
+    top: 45px;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 3rem;
+}
+.container .card .head i:active {
+    background-color: rgb(240, 107, 107);
+}
+
+.container .card .both {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    gap: 40px;
+}
+.container .card .both .left {
+    width: 50%;
+    height: 400px;
+}
+.container .card .both .left img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: .5s;
+    cursor: pointer;
+    box-shadow: 10px 10px 5px rgba(245, 222, 179, 0.396);
+}
+.container .card .both .left img:hover {
+    box-shadow: 10px 10px 5px aqua;
+}
+.container .card .both .right {
+    width: 50%;
+    height: auto;
+    line-height: 260%;
+}
+.container .card .both .right h1 {
+    color: wheat;
+    font-size: 2.5rem;
+    font-family: 'nav-a';
+    cursor: pointer;
+    transition: .6s;
+    letter-spacing: 6px;
+    margin-bottom: 10px;
+}
+.container .card .both .right hr {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 5px;
+    background-color: aqua;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+.container .card .both .right h2 {
+    color: crimson;
+    font-family: text;
+    font-size: 1.4rem;
+}
+.container .card .both .right h2 .info {
+    color: wheat;
+    font-size: 1.15rem;
+}
+.container .card .full {
+    width: 100%;
+    height: auto;
+    padding: 25px;
+}
+.container .card .full h1 {
+    color: wheat;
+    font-size: 2.5rem;
+    font-family: 'nav-a';
+    cursor: pointer;
+    transition: .6s;
+    letter-spacing: 6px;
+    margin-top: 10px;
+    text-align: center;
+}
+.container .card .full .hr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card .full hr {
+    border: none;
+    outline: none;
+    width: 50%;
+    height: 5px;
+    background-color: aqua;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.container .card .full p {
+    color: grey;
+    font-family: third;
+    margin: 40px 0;
+    font-size: 1.3rem;
+}
+

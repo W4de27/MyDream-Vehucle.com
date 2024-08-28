@@ -1,0 +1,629 @@
+/* button animation */
+/*
+.btn {
+    background-color: transparent;
+    color: whitesmoke;
+    width: 200px;
+    height: 50px;
+    border: 1px solid greenyellow;
+    outline: none;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+    position: relative;
+    transition: .6s;
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: -12px;
+    left: -12px;
+    border-top: 4px solid gold;
+    border-left: 4px solid gold;
+    transition: .8s;
+}
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    bottom: -12px;
+    right: -12px;
+    border-bottom: 4px solid gold;
+    border-right: 4px solid gold;
+    transition: .8s;
+}
+
+.btn:hover {
+    background-color: gold;
+    color: black;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+    width: 100%;
+    height: 100%;
+} */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url(imgs-P1/bgg4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+html {
+    scroll-behavior: smooth;
+}
+@font-face {
+    font-family: 'head';
+    src: url(fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'nav-a';
+    src: url(fonts/Roboto/Roboto-Thin.ttf);
+}
+@font-face {
+    font-family: 'text';
+    src: url(fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'title';
+    src: url(fonts/Nosifer/Nosifer-Regular.ttf);
+}
+@font-face {
+    font-family: 'services';
+    src: url(fonts/Supermercado_One/SupermercadoOne-Regular.ttf);
+}
+@font-face {
+    font-family: 'third';
+    src: url(fonts/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: thirdd;
+    src: url(fonts/Montserrat_Alternates/MontserratAlternates-ThinItalic.ttf);
+}
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 100px 100px;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 3px aqua;
+    padding: 0 30px;
+    transition: .6s;
+    z-index: 100;
+}
+header:hover {
+    box-shadow: 0 5px 8px aqua;
+
+}
+header .head-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+header .head-box img {
+    width: 70px;
+    margin-left: 50px;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: 0 0 5px aqua;
+    transition: .9s;
+}
+header .head-box h1 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: head;
+    letter-spacing: 1px;
+    transition: .9s;
+    cursor: pointer;
+}
+header .head-box h1 sup {
+    font-size: 0.7rem;
+}
+header .head-box img:hover{
+    box-shadow: 0 0 15px aqua;
+    cursor: pointer;
+}
+header .head-box img:hover + h1,
+header .head-box h1:hover  {
+    font-weight: 600;
+    color: aqua;
+    text-shadow: 15px 15px 2px aqua;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 1.3rem;
+    transition: all 0.5s;
+    position: relative;
+    font-family: 'nav-a';
+}
+header nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    width: 9px;
+    height: 9px;
+    border: 1px solid aqua;
+    border-width: 0 0 1px 1px;
+    opacity: 0;
+    transition: all 0.6s;
+    border-radius: 3px;
+}
+header nav a:hover::before {
+    opacity: 1;
+    bottom: -8px;
+    left: -12px;
+}
+header nav a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 9px;
+    height: 9px;
+    border: 1px solid aqua;
+    border-width: 1px 1px 0 0;
+    opacity: 0;
+    transition: all 0.6s;
+    border-radius: 3px;
+}
+header nav a:hover::after {
+    opacity: 1;
+    top: -8px;
+    right: -12px;
+}
+header nav a:hover {
+    color: aqua;
+}
+
+
+
+/* ############################## Section ################################# */
+
+section {
+    width: 100%;
+    height: auto;
+    padding: 0 40px;
+    background-color: rgba(0, 0, 0, 0.16);
+}
+section .first-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 200px;
+    gap: 15px;
+}
+section .first-section .img1 {
+    width: 300px;
+    height: 300px;
+    opacity: 0.6;
+    border-radius: 15px;
+    transition: .6s;
+    cursor: pointer;
+}
+section .first-section .img1:hover {
+    box-shadow: 10px 10px 8px aqua;
+}
+section .first-section .img2 {
+    width: 300px;
+    height: 300px;
+    opacity: 0.6s;
+    border-radius: 15px;
+    transition: .6s;
+    cursor: pointer;
+}
+section .first-section .img2:hover {
+    box-shadow: -10px 10px 8px rgba(0, 255, 255, 0.711);
+}
+section .first-section .section-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+section .first-section .section-text h1 {
+    color: white;
+    margin-bottom: 20px;
+    font-family: title;
+    font-size: 1.5rem;
+    text-align: center;
+}
+section .first-section .section-text h1::selection {
+    color: aqua;
+}
+section .first-section .section-text p {
+    color: wheat;
+    font-family: 'text';
+    line-height: 150%;
+    text-align: center;
+    font-size: 0.9rem;
+}
+section .first-section .section-text p::selection {
+    color: aqua;
+    background-color: rgba(0, 255, 255, 0.094);
+}
+
+section hr {
+    width: 100%;
+    height: 3px;
+    background-color: aqua;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    outline: none;
+    border: none;
+}
+/* ################################## Step 2 ################################*/
+
+section .second-section {
+    width: 100%;
+    height: auto;
+}
+section .second-section #service,
+section #about,
+section #contact {
+    color:aqua;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-size: 4rem;
+    font-family: sans-serif;
+    font-style: italic;
+    margin-bottom: 100px;
+    cursor: default;
+}
+section .second-section h5{
+    color: red;
+    font-size: 1.5rem;
+    font-family: title;
+    text-align: start;
+    margin-bottom: 100px;
+}
+section .second-section .first{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+section .second-section .second {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+section .second-section .third {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+section .second-section .forth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+
+section .second-section .first img{
+    width: 600px;
+    height: 350px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .6s;
+}
+section .second-section .first img:hover {
+    box-shadow: 0 0 20px aqua;
+}
+section .second-section .second img {
+    width: 530px;
+    height: 350px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .6s;
+}
+section .second-section .second img:hover {
+    box-shadow: 0 0 20px aqua;
+}
+
+section .second-section .first .box1 h1,
+section .second-section .second .box2 h1,
+section .second-section .third .box3 h1,
+section .second-section .forth .box4 h1 {
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-family: services;
+    color: aqua;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+section .second-section .first .box1 p,
+section .second-section .second .box2 p,
+section .second-section .third .box3 p,
+section .second-section .forth .box4 p {
+    color: wheat;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-family: 'text';
+    line-height: 150%;
+    font-size: 1.0rem;
+}
+section .second-section h2{
+        color: red;
+            font-size: 1.5rem;
+            font-family: title;
+            text-align: start;
+            margin-bottom: 100px;
+            margin-top: 160px;
+}
+
+
+section .second-section .third img {
+    width: 530px;
+    height: 350px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .6s;
+}
+section .second-section .third img:hover {
+    box-shadow: 0 0 20px aqua;
+}
+
+section .second-section .forth img {
+    width: 530px;
+    height: 350px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .6s;
+    border: 1px solid rgba(128, 128, 128, 0.434);
+}
+section .second-section .forth img:hover {
+    box-shadow: 0 0 20px aqua;
+}
+
+/* ############################## Step 3 ############################*/
+section .third-section {
+    width: 100%;
+    height: auto;
+    background-color: rgba(128, 128, 128, 0.063);
+    border-radius: 55px;
+    padding: 30px;
+    margin-bottom: 50px;
+    border: 1px solid aqua;
+}
+section .third-section:hover {
+    box-shadow: 0 0 15px aqua;
+}
+section .third-section h1 {
+    color: wheat;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 25px;
+    margin-bottom: 160px;
+    font-family: thirdd;
+}
+
+section .third-section table {
+    width: 100%;
+    height: auto;
+}
+section .third-section table tr :where(.td1 , .td2 , .td3 , .td4 , .td5) {
+    border: none;
+    border-right: 2px solid rgba(53, 80, 80, 0.759);
+    padding: 25px;
+    width: 300px;
+}
+section .third-section table tr {
+    display: block;
+    margin-bottom: 50px;
+}
+section .third-section label {
+    color: rgba(0, 255, 255, 0.779);
+    font-size: 1.5rem;
+    font-family: text;
+}
+section .third-section p ,
+section .third-section ul li {
+    color: white;
+    padding: 0 15px;
+    font-size: 1.0rem;
+    font-family: third;
+    line-height: 130%;
+}
+section .third-section ul li {
+    list-style-type: square;
+    margin-left: 30px;
+}
+section .third-section label::selection {
+    color: aqua;
+    background-color: rgba(0, 255, 255, 0.052);
+}
+section .third-section p::selection,
+section .third-section ul li::selection {
+    color: aqua;
+}
+section .third-section ul li span {
+    color: greenyellow;
+    font-weight: bolder;
+}
+section .third-section ul li span::selection {
+    color: rgba(11, 247, 168, 0.324);
+}
+
+/* ######################################### Footer ######################################## */
+footer {
+    width: calc(100% - 80px);
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.494);
+    margin-left: 40px;
+    border-radius: 25px 25px 0 0;
+}
+footer:hover {
+    box-shadow:  0 0 15px aqua;
+}
+footer .group-cols {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 80px 50px 60px;
+}
+footer .group-cols .col1 img {
+    width: 140px;
+    position: relative;
+    top: -45px;
+}
+footer .group-cols .col1 p {
+    color: wheat;
+    position: relative;
+    bottom: 40px;
+    font-family: text;
+    font-size: 0.9rem;
+    line-height: 160%;
+    cursor: default;
+}
+footer .group-cols :where(.col1 , .col2 , .col3 , .col4 , .col5) h1 {
+    color: rgba(0, 255, 255, 0.697);
+    font-size: 1.3rem;
+    font-family: title;
+    margin-bottom: 20px;
+    cursor: default;
+}
+footer .group-cols :where(.col1 ,.col2,.col3, .col4) ul li {
+    list-style: none;
+    color: wheat;
+    font-family: text;
+    line-height: 260%;
+    cursor: default;
+}
+footer .group-cols .col5 .inp {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 280px;
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0.345);
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+footer .group-cols .col5 .inp input {
+    width: 200px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    font-family: text;
+    outline: none;
+    color: wheat;
+    padding: 5px 7px 5px 5px;
+    font-size: 0.8rem;
+}
+footer .group-cols .col5 .inp button {
+    background-color: aqua;
+    width: 100px;
+    height: 100%;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: black;
+}
+footer .group-cols .col5 .inp input::placeholder {
+    color: grey;
+    font-weight: 600;
+}
+
+footer .group-cols .col5 .inp:hover {
+    box-shadow: 0 0 5px aqua;
+}
+footer .group-cols .col5 .inp button:active {
+    background-color: rgb(187, 234, 234);
+}
+footer .group-cols .col5 .inp img {
+    background-color: green;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -35px;
+    border-radius: 50%;
+    color: red;
+    padding: 2px;
+    display: none;
+}
+
+footer .footer-box {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .footer-box p {
+    color: white;
+    font-size: 1.0rem;
+    padding-left: 50px;
+    font-family: third;
+}
+footer .footer-box nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 50px;
+    gap: 25px;
+}
+footer .footer-box nav a {
+    color: wheat;
+    background-color: rgba(128, 128, 128, 0.267);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    transition: .4s;
+}
+footer .footer-box nav a:hover {
+    color: aqua;
+    background-color: rgba(128, 128, 128, 0.624);
+    border-radius: 20%;
+    box-shadow: 0 0 5px aqua;
+}
